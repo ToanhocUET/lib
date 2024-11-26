@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="949.0" style="-fx-background-color: #C1ECDB;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageBooks.DisplayBooksController">
+   <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="520.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+           <Text layoutX="346.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Library Books" AnchorPane.topAnchor="44.8359375">
+               <font>
+                   <Font name="System Bold" size="40.0" />
+               </font>
+           </Text>
+      </children>
+   </AnchorPane>
+    <TableView fx:id="tableView" layoutX="-14.0" layoutY="78.0" prefHeight="520.0" prefWidth="949.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+        <columns>
+            <TableColumn fx:id="orderColumn" prefWidth="59.0" text="Order" />
+            <TableColumn fx:id="isbnColumn" prefWidth="100.0" text="ISBN" />
+            <TableColumn fx:id="titleColumn" prefWidth="117.0" text="Title" />
+            <TableColumn fx:id="authorColumn" prefWidth="143.0" text="Author" />
+            <TableColumn fx:id="publisherColumn" prefWidth="142.0" text="Publisher" />
+            <TableColumn fx:id="categoryColumn" prefWidth="129.0" text="Category" />
+            <TableColumn fx:id="yearColumn" prefWidth="63.0" text="Year" />
+            <TableColumn fx:id="copiesColumn" prefWidth="76.0" text="Copies" />
+            <TableColumn fx:id="statusColumn" prefWidth="126.0" text="Status" />
+        </columns>
+    </TableView>
+</AnchorPane>

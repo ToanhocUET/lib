@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="741.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageBorrowings.DisplayAllCopiesAndIssueController">
+
+    <VBox layoutX="20.0" layoutY="20.0" spacing="10">
+        <Label text="Display Copies">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+
+        <VBox spacing="10">
+            <AnchorPane>
+                <Label layoutX="1.0" layoutY="1.0" text="Keyword" />
+                <TextField fx:id="keywordField" layoutX="70.0" layoutY="1.0" />
+                <MenuButton fx:id="searchMenuButton" layoutX="250.0" layoutY="1.0" text="All">
+                    <items>
+                        <MenuItem fx:id="searchAll" text="All" />
+                        <MenuItem fx:id="searchISBN" text="ISBN" />
+                        <MenuItem fx:id="searchTitle" text="Title" />
+                    </items>
+                </MenuButton>
+                <Button fx:id="searchBooksButton" layoutX="370.0" layoutY="1.0" text="Search Books" />
+                <Button fx:id="issueBookButton" layoutX="490.0" layoutY="1.0" text="Issue Book" />
+                <Button fx:id="checkCopiesButton" layoutX="610.0" layoutY="1.0" text="Check Copies" />
+            </AnchorPane>
+
+            <!-- Member ID input field for issuing a book -->
+            <AnchorPane layoutX="20.0" layoutY="50.0" visible="false" fx:id="memberInputPane">
+                <Label layoutX="1.0" layoutY="1.0" text="Enter Member ID" />
+                <TextField fx:id="memberIdField" layoutX="120.0" layoutY="1.0" promptText="Enter Member ID" />
+                <Button fx:id="confirmIssueBookButton" layoutX="300.0" layoutY="1.0" text="Confirm Issue" />
+            </AnchorPane>
+
+            <!-- TableView for Books -->
+            <TableView fx:id="bookTableView" prefHeight="200.0" prefWidth="950.0">
+                <columns>
+                    <TableColumn fx:id="isbnColumn" prefWidth="75.0" text="ISBN" />
+                    <TableColumn fx:id="titleColumn" prefWidth="149.0" text="Title" />
+                    <TableColumn fx:id="authorColumn" prefWidth="81.0" text="Author" />
+                    <TableColumn fx:id="publisherColumn" prefWidth="130.0" text="Publisher" />
+                    <TableColumn fx:id="categoryColumn" minWidth="0.0" prefWidth="150.0" text="Category" />
+                    <TableColumn fx:id="yearColumn" prefWidth="114.0" text="Year" />
+                    <TableColumn fx:id="copiesQuantityColumn" prefWidth="100.0" text="Copies Quantity" />
+                </columns>
+            </TableView>
+
+            <!-- TableView for Copies -->
+            <TableView fx:id="copiesTableView" prefHeight="209.0" prefWidth="950.0">
+                <columns>
+                    <TableColumn fx:id="orderColumn" prefWidth="50.0" text="Order" />
+                    <TableColumn fx:id="copyIDColumn" prefWidth="219.0" text="CopyID" />
+                    <TableColumn fx:id="copyISBNColumn" prefWidth="236.0" text="ISBN" />
+                    <TableColumn fx:id="statusColumn" prefWidth="444.0" text="Status" />
+                </columns>
+            </TableView>
+        </VBox>
+    </VBox>
+    <padding>
+        <Insets left="15.0" />
+    </padding>
+</AnchorPane>

@@ -1,0 +1,44 @@
+.login_container{
+    -fx-background-color: #ABCDEF;
+}
+
+.login_logo_container{
+    -fx-background-color: #132A13;
+    -fx-alignment: center;
+}
+
+.login_logo_container Text{
+    -fx-font-size: 2em;
+    -fx-text-fill: Black;
+}
+
+.login_logo_container FontAwesomeIconView{
+    -fx-fill: Cyan;
+}
+
+/* login form*/
+.login_form_container {
+    -fx-spacing: 15;
+    -fx-alignment: top_left;
+}
+
+.login_form_container Label {
+    -fx-text-fill: Blue;
+    -fx-font-weight: bold;
+}
+.input_field {
+    -fx-background-color: White;
+    -fx-pref-height: 35;
+    -fx-font-size: 15;
+}
+
+.login_form_container Button {
+    -fx-background-color: Black;
+    -fx-text-fill: White;
+    -fx-pref-width: 350;
+    -fx-pref-height: 30;
+}
+
+.login_form_container Button:hover {
+    -fx-cursor: hand;
+}

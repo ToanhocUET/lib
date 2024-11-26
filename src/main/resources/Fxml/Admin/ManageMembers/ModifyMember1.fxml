@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="949.0" style="-fx-background-color: #C1ECDB;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageMembers.ModifyMember1Controller">
+    <Text layoutX="87.0" layoutY="248.0" text="Enter Member ID">
+        <font>
+          <Font name="System Bold" size="20.0" />
+        </font>
+    </Text>
+    <TextField fx:id="memberIDField" layoutX="327.0" layoutY="227.0" prefHeight="25.0" prefWidth="364.0" />
+    <Text layoutX="87.0" layoutY="307.0" text="Enter Member Name">
+        <font>
+          <Font name="System Bold" size="20.0" />
+        </font>
+    </Text>
+    <TextField fx:id="memberNameField" layoutX="327.0" layoutY="286.0" prefHeight="25.0" prefWidth="364.0" />
+    <Text layoutX="87.0" layoutY="364.0" text="Enter Member Contact">
+        <font>
+          <Font name="System Bold" size="20.0" />
+        </font>
+    </Text>
+    <TextField fx:id="memberContactField" layoutX="327.0" layoutY="345.0" prefHeight="25.0" prefWidth="364.0" />
+    <HBox layoutX="509.0" layoutY="456.0" spacing="10" styleClass="action_box" stylesheets="@../../../Styles/AddMember.css">
+        <Button fx:id="cancelButton" onAction="#handleCancel" prefHeight="47.0" prefWidth="93.0" style="-fx-font-weight: bold; -fx-background-color: white; -fx-font-size: 18;" text="Cancel">
+            <HBox.margin>
+                <Insets left="20.0" />
+            </HBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+        </Button>
+        <Button fx:id="confirmButton" onAction="#handleConfirmButtonAction" prefHeight="47.0" prefWidth="93.0" style="-fx-font-weight: bold; -fx-background-color: white;" text="Confirm">
+            <HBox.margin>
+                <Insets left="30.0" />
+            </HBox.margin>
+         <font>
+            <Font size="47.0" />
+         </font>
+        </Button>
+    </HBox>
+    <Text fontSmoothingType="LCD" layoutX="283.0" layoutY="99.0" style="-fx-font-weight: bold; -fx-font-size: 50;" text="Modify Member">
+        <font>
+          <Font name="System Bold" size="20.0" />
+        </font>
+    </Text>
+   <Button fx:id="back_btn" layoutX="34.0" layoutY="59.0" mnemonicParsing="false" onAction="#handleBackButtonAction" style="-fx-background-color: white;">
+      <graphic>
+         <FontAwesomeIconView glyphName="ARROW_LEFT" size="30" />
+      </graphic>
+   </Button>
+</AnchorPane>

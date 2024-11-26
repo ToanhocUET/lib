@@ -1,0 +1,50 @@
+.add_member_container {
+    -fx-background-color: WHITE;
+}
+
+.add_member_container Text {
+    -fx-font-size: 20;
+    -fx-fill: BLACK; /* Màu chữ đậm hơn */
+    -fx-alignment: middle;
+    -fx-font-weight: lighter;
+}
+
+.add_member_container VBox {
+    -fx-border-width: 0 0 0 1;
+    -fx-border-color: #CCCCCC; /* Màu viền nhẹ hơn để tạo cảm giác tinh tế */
+    -fx-padding: 10;
+    -fx-spacing: 15;
+}
+
+.add_member_container TextField {
+    -fx-pref-width: 250;
+    -fx-pref-height: 35;
+    -fx-background-color: WHITE;
+    -fx-font-size: 14;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 3, 0, 0, 3);
+}
+
+.action_box HBox {
+    -fx-border-color: BLACK;
+    -fx-padding: 10;
+    -fx-spacing: 50;
+}
+
+.action_box Button {
+    -fx-background-color: linear-gradient(to right, #4A7E4D, #6A9E68);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,102,90,0.5), 3, 0, 0, 3);
+    -fx-pref-width: 100; /* Đủ rộng để chứa nội dung */
+    -fx-font-size: 18;
+    -fx-font-family: "Calibri";
+    -fx-text-fill: BLACK; /* Đổi thành trắng để tăng độ tương phản */
+    -fx-font-weight: bold;
+}
+
+.add_member_container Button:hover {
+    -fx-cursor: hand;
+}
+
+.error_label {
+    -fx-text-fill: RED;
+    -fx-font-size: 20; /* Đảm bảo lỗi hiển thị dễ đọc */
+}

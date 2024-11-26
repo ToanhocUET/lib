@@ -1,0 +1,52 @@
+/* Cấu hình cho tiêu đề "Remove Book" */
+.text {
+    -fx-font-family: "System Bold";
+    -fx-font-size: 40px;
+    -fx-fill: #333333; /* Màu sắc của chữ */
+    -fx-text-alignment: center;
+    -fx-margin-left: 10px;
+    -fx-margin-top: 10px;
+}
+
+/* Cấu hình cho TableView */
+.table-view {
+    -fx-background-color: #f4f4f4; /* Màu nền bảng */
+    -fx-border-color: #cccccc; /* Màu viền bảng */
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+}
+
+.table-view .table-column-header {
+    -fx-background-color: #0078D4; /* Màu nền của tiêu đề cột */
+    -fx-text-fill: white; /* Màu chữ trong tiêu đề cột */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-cell {
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+    -fx-alignment: center-left;
+}
+
+/* Cấu hình cho các nút trong VBox */
+.button {
+    -fx-background-color: #0078D4; /* Màu nền nút */
+    -fx-text-fill: white; /* Màu chữ nút */
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand; /* Thêm hiệu ứng con trỏ khi di chuột qua nút */
+}
+
+/* Khi di chuột qua nút (hover) */
+.button:hover {
+    -fx-background-color: #005a9e; /* Màu nền khi hover */
+}
+
+/* Thêm khoảng cách giữa các phần tử trong VBox */
+.vbox {
+    -fx-spacing: 15px;
+    -fx-padding: 10px;
+}

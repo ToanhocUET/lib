@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="949.0" style="-fx-background-color: #C1ECDB;" styleClass="add_member_container" stylesheets="@../../../Styles/AddMember.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageMembers.AddMemberController">
+   <Text fontSmoothingType="LCD" layoutX="248.0" layoutY="85.0" style="-fx-font-weight: bold; -fx-font-size: 50;" text="Add New Member">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font>
+   </Text>
+   <VBox layoutX="-1.0" layoutY="132.0" prefHeight="574.0" prefWidth="326.0" spacing="10" style="-fx-background-color: #C1ECDB;" AnchorPane.leftAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.171">
+      <padding>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <Text text="Enter Member ID" />
+      <TextField fx:id="memberIDField" />
+      <Text text="Enter Member Name" />
+      <TextField fx:id="memberNameField" />
+      <Text text="Enter Member Contact" />
+      <TextField fx:id="memberContactField" />
+      <HBox spacing="10" styleClass="action_box" stylesheets="@../../../Styles/AddMember.css">
+         <Button fx:id="cancelButton" onAction="#handleCancel" prefHeight="41.0" prefWidth="83.0" style="-fx-font-weight: bold; -fx-background-color: white;" text="Cancel">
+            <HBox.margin>
+               <Insets left="20.0" />
+            </HBox.margin></Button>
+         <Button fx:id="confirmButton" onAction="#handleConfirmButtonAction" prefHeight="41.0" prefWidth="83.0" style="-fx-font-weight: bold; -fx-background-color: white;" text="Confirm">
+            <HBox.margin>
+               <Insets left="30.0" />
+            </HBox.margin>
+         </Button>
+      </HBox>
+   </VBox>
+   <TableView fx:id="memberTable" layoutX="325.0" layoutY="132.0" prefHeight="574.0" prefWidth="622.0">
+      <columns>
+         <TableColumn fx:id="memberID" prefWidth="150.0" text="Member ID" />
+         <TableColumn fx:id="name" minWidth="0.0" prefWidth="259.0" text="Full Name" />
+         <TableColumn fx:id="contactInfo" prefWidth="212.0" text="Contact" />
+      </columns>
+   </TableView>
+</AnchorPane>

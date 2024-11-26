@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="main_menu_container" stylesheets="@../../../Styles/Managebooks.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageBooks.ManageBooksController">
+
+    <padding>
+        <Insets bottom="10.0" />
+    </padding>
+
+    <VBox layoutX="87.0" layoutY="114.0" prefHeight="720.0" prefWidth="336.0" style="-fx-background-color: #C1ECDB;" styleClass="main_menu_container" stylesheets="@../../../Styles/Managebooks.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <!-- Logo Section -->
+        <VBox prefHeight="150.0" prefWidth="336.0" stylesheets="@../../../Styles/Managebooks.css">
+            <FontAwesomeIconView glyphName="BOOK" size="80">
+                <VBox.margin>
+                    <Insets left="125.0" top="25.0" />
+                </VBox.margin>
+            </FontAwesomeIconView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ZLIB">
+                <font>
+                    <Font size="32.0" />
+                </font>
+                <VBox.margin>
+                    <Insets left="125.0" />
+                </VBox.margin>
+            </Text>
+        </VBox>
+
+        <!-- Menu Buttons Section -->
+        <VBox prefHeight="413.0" prefWidth="405.0" styleClass="menu_container" stylesheets="@../../../Styles/Managebooks.css">
+            <!-- Buttons for ManageBooks -->
+            <Button fx:id="addbook_btn" mnemonicParsing="false" onAction="#handleAddBook" prefHeight="69.0" prefWidth="361.0" styleClass="menu_button" text="Add Book">
+                <font>
+                    <Font name="System Bold" size="27.0" />
+                </font>
+                <graphic>
+                    <FontAwesomeIconView glyphName="PLUS" size="50" />
+                </graphic>
+            </Button>
+
+            <Button fx:id="removebook_btn" mnemonicParsing="false" onAction="#handleRemoveBook" prefHeight="60.0" prefWidth="400.0" styleClass="menu_button" text="Remove Book">
+                <font>
+                    <Font name="System Bold" size="27.0" />
+                </font>
+                <graphic>
+                    <FontAwesomeIconView glyphName="MINUS" size="50" />
+                </graphic>
+            </Button>
+
+            <Button fx:id="updatebook_btn" mnemonicParsing="false" onAction="#handleUpdateBook" prefHeight="60.0" prefWidth="400.0" styleClass="menu_button" text="Update Book">
+                <font>
+                    <Font name="System Bold" size="27.0" />
+                </font>
+                <graphic>
+                    <FontAwesomeIconView glyphName="COG" size="50" />
+                </graphic>
+            </Button>
+
+            <Button fx:id="searchbook_btn" mnemonicParsing="false" onAction="#handleSearchBook" prefHeight="60.0" prefWidth="400.0" styleClass="menu_button" text="Search Book">
+                <font>
+                    <Font name="System Bold" size="27.0" />
+                </font>
+                <graphic>
+                    <FontAwesomeIconView glyphName="SEARCH" size="50" />
+                </graphic>
+            </Button>
+
+            <Button fx:id="displaybooks_btn" mnemonicParsing="false" onAction="#handleDisplayBooks" prefHeight="60.0" prefWidth="400.0" styleClass="menu_button" text="Display All Books">
+                <font>
+                    <Font name="System Bold" size="27.0" />
+                </font>
+                <graphic>
+                    <FontAwesomeIconView glyphName="EYE" size="50" />
+                </graphic>
+            </Button>
+
+            <Button fx:id="back_btn" mnemonicParsing="false" onAction="#handleBack" prefHeight="60.0" prefWidth="400.0" styleClass="menu_button" text="Back">
+                <font>
+                    <Font name="System Bold" size="27.0" />
+                </font>
+                <graphic>
+                    <FontAwesomeIconView glyphName="ARROW_LEFT" size="50" />
+                </graphic>
+            </Button>
+        </VBox>
+    </VBox>
+
+    <!-- Content Pane where Add Book form will appear -->
+    <AnchorPane fx:id="contentPane" layoutX="334.0" layoutY="-1.0" prefHeight="720.0" prefWidth="949.0" style="-fx-background-color: #C1ECDB;">
+      <children>
+         <ImageView fitHeight="642.0" fitWidth="949.0" layoutX="-2.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="37.0">
+            <image>
+               <Image url="@../../../Images/Remove-bg.ai_1732255293915.png" />
+            </image>
+         </ImageView>
+      </children></AnchorPane>
+</AnchorPane>
