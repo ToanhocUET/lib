@@ -5,8 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -23,20 +22,36 @@
         </font>
     </Text>
 
-    <!-- HBox for search functionality (shortened height) -->
+    <!-- Search Section -->
     <HBox layoutY="103.0" prefHeight="80.0" prefWidth="949.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="103.0">
         <children>
-            <!-- VBox for the Keyword label and text field -->
+            <!-- VBox for Keyword Label and TextField -->
             <VBox prefHeight="97.0" prefWidth="539.0">
                 <children>
-                    <Label text="Keyword">
-                        <font>
-                            <Font name="System Bold" size="18.0" />
-                        </font>
-                        <VBox.margin>
-                            <Insets left="30.0" />
-                        </VBox.margin>
-                    </Label>
+                    <HBox prefHeight="26.0" prefWidth="539.0">
+                        <children>
+                            <Label text="Keyword">
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+                                <HBox.margin>
+                                    <Insets left="35.0" />
+                                </HBox.margin>
+                            </Label>
+                            <MenuButton fx:id="searchMenuButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="94.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="All Field">
+                                <items>
+                                    <MenuItem fx:id="searchAll" text="All Field" />
+                                    <MenuItem fx:id="searchISBN" text="ISBN" />
+                                    <MenuItem fx:id="searchTitle" text="Title" />
+                                    <MenuItem fx:id="searchAuthor" text="Author" />
+                                    <MenuItem fx:id="searchCategory" text="Category" />
+                                </items>
+                                <HBox.margin>
+                                    <Insets left="20.0" />
+                                </HBox.margin>
+                            </MenuButton>
+                        </children>
+                    </HBox>
                     <TextField fx:id="keywordField" prefHeight="41.0" prefWidth="509.0" promptText="Enter Keyword">
                         <VBox.margin>
                             <Insets left="30.0" top="10.0" />
@@ -45,24 +60,17 @@
                 </children>
             </VBox>
 
-            <!-- AnchorPane for the search menu button and search button -->
+            <!-- Buttons for Search and Update -->
             <AnchorPane prefHeight="97.0" prefWidth="410.0">
                 <children>
-                    <MenuButton fx:id="searchMenuButton" layoutX="18.0" layoutY="-3.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="93.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="All Field" AnchorPane.bottomAnchor="71.0" AnchorPane.topAnchor="0.0">
-                        <items>
-                            <MenuItem fx:id="searchAll" text="All Field" />
-                            <MenuItem fx:id="searchISBN" text="ISBN" />
-                            <MenuItem fx:id="searchTitle" text="Title" />
-                            <MenuItem fx:id="searchAuthor" text="Author" />
-                            <MenuItem fx:id="searchCategory" text="Category" />
-                        </items>
+                    <Button fx:id="searchButton" layoutX="18.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" prefHeight="30.0" prefWidth="93.0" style="-fx-background-color: white;" text="Search">
                         <font>
-                            <Font size="15.0" />
+                            <Font name="System Bold" size="12.0" />
                         </font>
-                    </MenuButton>
-                    <Button fx:id="search_btn" layoutX="18.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" prefHeight="30.0" prefWidth="93.0" style="-fx-background-color: white;" text="Search">
+                    </Button>
+                    <Button fx:id="updateButton" layoutX="17.0" layoutY="-1.0" mnemonicParsing="false" onAction="#handleUpdateBook" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Update">
                         <font>
-                            <Font name="System Bold" size="15.0" />
+                            <Font name="System Bold" size="12.0" />
                         </font>
                     </Button>
                 </children>
@@ -70,25 +78,11 @@
         </children>
     </HBox>
 
-    <!-- TableView for displaying books (extended height) -->
-    <TableView fx:id="tableView" layoutY="200.0" prefHeight="520.0" prefWidth="949.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="200.0">
-        <columns>
-            <TableColumn fx:id="orderColumn" prefWidth="60.79998856782913" text="Order" />
-            <TableColumn fx:id="isbnColumn" prefWidth="89.60000228881836" text="ISBN" />
-            <TableColumn fx:id="titleColumn" prefWidth="150.0" text="Title" />
-            <TableColumn fx:id="authorColumn" prefWidth="150.0" text="Author" />
-            <TableColumn fx:id="publisherColumn" prefWidth="150.0" text="Publisher" />
-            <TableColumn fx:id="categoryColumn" prefWidth="100.0" text="Category" />
-            <TableColumn fx:id="yearColumn" prefWidth="80.0" text="Year" />
-            <TableColumn fx:id="copiesColumn" prefWidth="70.0" text="Copies" />
-            <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status" />
-        </columns>
-    </TableView>
-
-    <!-- Button to update book -->
-    <Button fx:id="update_btn" layoutX="746.0" layoutY="643.0" mnemonicParsing="false" onAction="#handleUpdateBook" prefHeight="47.0" prefWidth="93.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Update">
-      <font>
-         <Font name="System Bold" size="17.0" />
-      </font></Button>
+    <!-- ScrollPane and VBox for displaying results -->
+    <ScrollPane layoutY="200.0" prefHeight="523.0" prefWidth="949.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+        <content>
+            <VBox fx:id="resultsContainer" spacing="10.0" style="-fx-padding: 10;" />
+        </content>
+    </ScrollPane>
 
 </AnchorPane>

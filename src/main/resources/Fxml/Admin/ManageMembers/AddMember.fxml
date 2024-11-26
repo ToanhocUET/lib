@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="949.0" style="-fx-background-color: #C1ECDB;" styleClass="add_member_container" stylesheets="@../../../Styles/AddMember.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageMembers.AddMemberController">
+<AnchorPane prefHeight="720.0" prefWidth="949.0" style="-fx-background-color: #C1ECDB;" styleClass="add_member_container" stylesheets="@../../../Styles/AddMember.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageMembers.AddMemberController">
    <Text fontSmoothingType="LCD" layoutX="248.0" layoutY="85.0" style="-fx-font-weight: bold; -fx-font-size: 50;" text="Add New Member">
       <font>
          <Font name="System Bold" size="20.0" />
@@ -22,11 +22,14 @@
          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
       </padding>
       <Text text="Enter Member ID" />
-      <TextField fx:id="memberIDField" />
+      <TextField fx:id="memberIDField" promptText="Member ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
       <Text text="Enter Member Name" />
-      <TextField fx:id="memberNameField" />
+      <TextField fx:id="memberNameField" promptText="Member Full Name" />
       <Text text="Enter Member Contact" />
-      <TextField fx:id="memberContactField" />
+      <TextField fx:id="memberContactField" promptText="Address or Gmail" />
       <HBox spacing="10" styleClass="action_box" stylesheets="@../../../Styles/AddMember.css">
          <Button fx:id="cancelButton" onAction="#handleCancel" prefHeight="41.0" prefWidth="83.0" style="-fx-font-weight: bold; -fx-background-color: white;" text="Cancel">
             <HBox.margin>

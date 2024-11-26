@@ -10,22 +10,37 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageBorrowings.DisplayMemberBorrowingAndReturnController">
+<AnchorPane prefHeight="720.0" prefWidth="950.0" style="-fx-background-color: #C1ECDB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageBorrowings.DisplayMemberBorrowingAndReturnController">
 
     <VBox layoutX="18.0" layoutY="27.0" spacing="10">
-        <Label text="Display Member Borrowing and Return">
+        <Label prefHeight="43.0" prefWidth="833.0" text="Display Member Borrowing and Return" textAlignment="CENTER" textFill="#bf3d3d">
             <font>
-                <Font name="System Bold" size="30.0" />
+                <Font name="Arial Rounded MT Bold" size="36.0" />
             </font>
+         <padding>
+            <Insets left="150.0" />
+         </padding>
         </Label>
 
         <VBox spacing="10">
             <AnchorPane>
-                <Label layoutX="1.0" layoutY="1.0" text="Member ID" />
-                <TextField fx:id="memberIdField" layoutX="100.0" layoutY="1.0" promptText="Enter Member ID" />
-                <Button fx:id="searchMemberBorrowingsButton" layoutX="300.0" layoutY="1.0" text="Search Borrowings" />
-                <Button fx:id="returnBookButton" layoutX="450.0" layoutY="1.0" text="Return Book" />
-                <Button fx:id="exportDataButton" layoutX="600.0" layoutY="1.0" text="Export Data" />
+                <Label layoutX="1.0" layoutY="1.0" prefHeight="43.0" prefWidth="99.0" text="Member ID">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font></Label>
+                <TextField fx:id="memberIdField" layoutX="100.0" layoutY="1.0" prefHeight="43.0" prefWidth="168.0" promptText="Enter Member ID" />
+                <Button fx:id="searchMemberBorrowingsButton" layoutX="321.0" layoutY="1.0" prefHeight="43.0" prefWidth="159.0" style="-fx-background-color: white;" text="Search Borrowings">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+                <Button fx:id="returnBookButton" layoutX="530.0" layoutY="1.0" prefHeight="43.0" prefWidth="124.0" style="-fx-background-color: white;" text="Return Book">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+                <Button fx:id="exportDataButton" layoutX="690.0" layoutY="1.0" prefHeight="43.0" prefWidth="142.0" style="-fx-background-color: white;" text="Export Data" underline="true">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
             </AnchorPane>
 
             <!-- TableView for Member Borrowings -->

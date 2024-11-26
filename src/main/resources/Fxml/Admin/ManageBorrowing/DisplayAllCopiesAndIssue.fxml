@@ -11,59 +11,97 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="741.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageBorrowings.DisplayAllCopiesAndIssueController">
+<AnchorPane prefHeight="741.0" prefWidth="950.0" style="-fx-background-color: #C1ECDB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.Admin.ManageBorrowings.DisplayAllCopiesAndIssueController">
 
     <VBox layoutX="20.0" layoutY="20.0" spacing="10">
-        <Label text="Display Copies">
-            <font>
-                <Font name="System Bold" size="30.0" />
-            </font>
-        </Label>
+      <Text fill="#ab3535" strokeType="OUTSIDE" strokeWidth="0.0" text="Issue Books System">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="35.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="300.0" />
+         </VBox.margin>
+      </Text>
 
         <VBox spacing="10">
-            <AnchorPane>
-                <Label layoutX="1.0" layoutY="1.0" text="Keyword" />
-                <TextField fx:id="keywordField" layoutX="70.0" layoutY="1.0" />
-                <MenuButton fx:id="searchMenuButton" layoutX="250.0" layoutY="1.0" text="All">
+            <AnchorPane prefHeight="32.0" prefWidth="950.0">
+                <Label layoutY="19.0" text="Keyword">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+                <TextField fx:id="keywordField" layoutX="72.0" layoutY="7.0" prefHeight="45.0" prefWidth="176.0" promptText="Enter keyword">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font></TextField>
+                <MenuButton fx:id="searchMenuButton" layoutX="266.0" layoutY="7.0" prefHeight="45.0" prefWidth="77.0" style="-fx-background-color: white;" text="All">
                     <items>
                         <MenuItem fx:id="searchAll" text="All" />
                         <MenuItem fx:id="searchISBN" text="ISBN" />
                         <MenuItem fx:id="searchTitle" text="Title" />
                     </items>
+               <font>
+                  <Font size="15.0" />
+               </font>
                 </MenuButton>
-                <Button fx:id="searchBooksButton" layoutX="370.0" layoutY="1.0" text="Search Books" />
-                <Button fx:id="issueBookButton" layoutX="490.0" layoutY="1.0" text="Issue Book" />
-                <Button fx:id="checkCopiesButton" layoutX="610.0" layoutY="1.0" text="Check Copies" />
+                <Button fx:id="searchBooksButton" layoutX="370.0" layoutY="1.0" prefHeight="52.0" prefWidth="142.0" style="-fx-background-color: white;" text="Search Books">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+                <Button fx:id="issueBookButton" layoutX="752.0" layoutY="3.0" prefHeight="53.0" prefWidth="135.0" style="-fx-background-color: white;" text="Issue Book">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Button>
+                <Button fx:id="checkCopiesButton" layoutX="533.0" layoutY="1.0" prefHeight="51.0" prefWidth="176.0" style="-fx-background-color: white;" text="Check Copies">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Button>
             </AnchorPane>
 
             <!-- Member ID input field for issuing a book -->
-            <AnchorPane layoutX="20.0" layoutY="50.0" visible="false" fx:id="memberInputPane">
+            <AnchorPane fx:id="memberInputPane" layoutX="20.0" layoutY="50.0" visible="false">
                 <Label layoutX="1.0" layoutY="1.0" text="Enter Member ID" />
                 <TextField fx:id="memberIdField" layoutX="120.0" layoutY="1.0" promptText="Enter Member ID" />
                 <Button fx:id="confirmIssueBookButton" layoutX="300.0" layoutY="1.0" text="Confirm Issue" />
             </AnchorPane>
+         <Text fill="#bc2b2b" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Books" wrappingWidth="144.9990234375">
+            <VBox.margin>
+               <Insets left="400.0" />
+            </VBox.margin>
+            <font>
+               <Font name="System Bold" size="19.0" />
+            </font>
+         </Text>
 
             <!-- TableView for Books -->
-            <TableView fx:id="bookTableView" prefHeight="200.0" prefWidth="950.0">
+            <TableView fx:id="bookTableView" prefHeight="245.0" prefWidth="950.0">
                 <columns>
                     <TableColumn fx:id="isbnColumn" prefWidth="75.0" text="ISBN" />
                     <TableColumn fx:id="titleColumn" prefWidth="149.0" text="Title" />
                     <TableColumn fx:id="authorColumn" prefWidth="81.0" text="Author" />
                     <TableColumn fx:id="publisherColumn" prefWidth="130.0" text="Publisher" />
-                    <TableColumn fx:id="categoryColumn" minWidth="0.0" prefWidth="150.0" text="Category" />
-                    <TableColumn fx:id="yearColumn" prefWidth="114.0" text="Year" />
-                    <TableColumn fx:id="copiesQuantityColumn" prefWidth="100.0" text="Copies Quantity" />
+                    <TableColumn fx:id="categoryColumn" minWidth="0.0" prefWidth="175.0" text="Category" />
+                    <TableColumn fx:id="yearColumn" prefWidth="142.0" text="Year" />
+                    <TableColumn fx:id="copiesQuantityColumn" prefWidth="197.0" text="Copies Quantity" />
                 </columns>
             </TableView>
+         <Text fill="#bc2b2b" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Copies">
+            <VBox.margin>
+               <Insets left="400.0" />
+            </VBox.margin>
+            <font>
+               <Font name="System Bold" size="19.0" />
+            </font>
+         </Text>
 
             <!-- TableView for Copies -->
-            <TableView fx:id="copiesTableView" prefHeight="209.0" prefWidth="950.0">
+            <TableView fx:id="copiesTableView" prefHeight="228.0" prefWidth="950.0">
                 <columns>
-                    <TableColumn fx:id="orderColumn" prefWidth="50.0" text="Order" />
-                    <TableColumn fx:id="copyIDColumn" prefWidth="219.0" text="CopyID" />
-                    <TableColumn fx:id="copyISBNColumn" prefWidth="236.0" text="ISBN" />
-                    <TableColumn fx:id="statusColumn" prefWidth="444.0" text="Status" />
+                    <TableColumn fx:id="orderColumn" text="Order" />
+                    <TableColumn fx:id="copyIDColumn" prefWidth="189.0" text="CopyID" />
+                    <TableColumn fx:id="copyISBNColumn" prefWidth="372.0" text="ISBN" />
+                    <TableColumn fx:id="statusColumn" prefWidth="308.0" text="Status" />
                 </columns>
             </TableView>
         </VBox>

@@ -6,12 +6,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.LoginController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.demo.zlib.Controllers.LoginController">
    <VBox prefHeight="720.0" prefWidth="640.0" style="-fx-background-color: #C1ECDB;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
       <FontAwesomeIconView fill="white" glyphName="BOOK" selectionFill="#00665a" size="80.0">
          <VBox.margin>
@@ -26,57 +28,68 @@
             <Insets left="260.0" top="10.0" />
          </VBox.margin>
       </Text>
-      <Text fill="#00665a" strokeType="OUTSIDE" strokeWidth="0.0" text="Xin chào">
+      <Text fill="#00665a" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to our library management system">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold Italic" size="29.0" />
          </font>
          <VBox.margin>
-            <Insets left="270.0" top="20.0" />
+            <Insets left="25.0" top="20.0" />
          </VBox.margin>
       </Text>
-      <Text fill="#00665a" strokeType="OUTSIDE" strokeWidth="0.0" text="Hãy bắt đầu hành trình khám phá tri thức của bạn.">
+      <Text fill="#00665a" strokeType="OUTSIDE" strokeWidth="0.0" text="ZLIB, Brings the whole world to your hands">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold Italic" size="24.0" />
          </font>
          <VBox.margin>
             <Insets left="100.0" />
          </VBox.margin>
       </Text>
+      <ImageView fitHeight="341.0" fitWidth="639.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Login_icon.png" />
+         </image>
+      </ImageView>
    </VBox>
    <VBox layoutX="640.0" prefHeight="720.0" prefWidth="640.0" style="-fx-background-color: #ffffff;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <Label fx:id="welcome_lbl" text="Welcome Back!" textFill="#00665a">
+      <Label fx:id="welcome_lbl" text="Library Management System" textFill="#00665a">
          <font>
-            <Font name="System Bold" size="50.0" />
+            <Font name="System Bold" size="34.0" />
          </font>
          <VBox.margin>
-            <Insets left="150.0" top="80.0" />
+            <Insets left="110.0" top="80.0" />
          </VBox.margin>
       </Label>
-      <Label fx:id="account_lbl" text="Enter Admin ID" textAlignment="CENTER" textFill="#000000">
+      <Label fx:id="account_lbl" prefHeight="41.0" prefWidth="140.0" text="Enter Admin ID" textAlignment="CENTER" textFill="#000000">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
          <VBox.margin>
             <Insets left="50.0" top="30.0" />
          </VBox.margin>
       </Label>
-      <TextField fx:id="account_fid" prefHeight="42.0" prefWidth="540.0" style="-fx-border-color: #00665A; -fx-border-radius: 5; -fx-padding: 5;">
+      <TextField fx:id="account_fid" prefHeight="50.0" prefWidth="549.0" promptText="Enter Admin ID" style="-fx-border-color: #00665A; -fx-border-radius: 5; -fx-padding: 5; -fx-border-width: 2;">
          <VBox.margin>
             <Insets left="50.0" right="50.0" />
          </VBox.margin>
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
       </TextField>
       <Label fx:id="pass_lbl" text="Enter Password" textFill="#000000">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
          <VBox.margin>
             <Insets left="50.0" top="30.0" />
          </VBox.margin>
       </Label>
-      <PasswordField fx:id="pass_fid" prefHeight="42.0" prefWidth="540.0" style="-fx-border-color: #00665A; -fx-border-radius: 5; -fx-padding: 5;">
+      <PasswordField fx:id="pass_fid" prefHeight="54.0" prefWidth="541.0" promptText="Enter Password" style="-fx-border-color: #00665A; -fx-border-radius: 5; -fx-padding: 5; -fx-border-width: 2;">
          <VBox.margin>
             <Insets left="50.0" right="50.0" />
          </VBox.margin>
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
       </PasswordField>
       <Button fx:id="login_btn" mnemonicParsing="false" onAction="#handleLoginButton" prefHeight="12.0" prefWidth="92.0" style="-fx-background-color: #00665A; -fx-text-fill: white; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10;" text="Login">
          <VBox.margin>
